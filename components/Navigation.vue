@@ -1,5 +1,5 @@
 <template>
-  <nav class=" w-full p-2 bg-transparent h-20 md:px-4">
+  <nav class="w-full p-2 bg-transparent h-20 md:px-4">
     <div class="flex items-center justify-between">
 
       <!-- Header logo -->
@@ -23,12 +23,12 @@
       <!-- Navbar -->
       <div class="hidden md:block">
         <ul class="flex space-x-4 md:text-base lg:text-lg font-sans font-medium text-teal-500 hover:text-teal-700">
-          <li><a href="hover:border-teal-500" class="active text-teal-700 border-b-2 border-red-500 pb-1">Главная</a></li>
-          <li><a href="#" class="hover:border-b-2 hover:border-yellow-500 hover:pb-1">Сад</a></li>
-          <li><a href="#" class="hover:border-b-2 hover:border-yellow-500 hover:pb-1">Кружки</a></li>
-          <li><a href="#" class="hover:border-b-2 hover:border-yellow-500 hover:pb-1">Новости</a></li>
-          <li><a href="#" class="hover:border-b-2 hover:border-yellow-500 hover:pb-1">Контакты</a></li>
-          <li><a href="#" class="cta bg-teal-500 hover:bg-teal-700 hover:border-2 hover:border-yellow-500 px-3 py-2 rounded-full text-white font-semibold">Войти</a></li>
+          <li><NuxtLink to="/" class="active hover:border-b-2 hover:border-yellow-500 hover:pb-1">Главная</NuxtLink></li>
+          <li><NuxtLink to="/detskij-sadik" class="hover:border-b-2 hover:border-yellow-500 hover:pb-1">Сад</NuxtLink></li>
+          <li><NuxtLink to="/uslugi" class="hover:border-b-2 hover:border-yellow-500 hover:pb-1">Кружки</NuxtLink></li>
+          <li><NuxtLink to="/" class="hover:border-b-2 hover:border-yellow-500 hover:pb-1">Новости</NuxtLink></li>
+          <li><NuxtLink to="/kontakty" class="hover:border-b-2 hover:border-yellow-500 hover:pb-1">Контакты</NuxtLink></li>
+          <li><NuxtLink to="/" class="cta bg-teal-500 hover:bg-teal-700 hover:border-2 hover:border-yellow-500 px-3 py-2 rounded-full text-white font-semibold">Войти</NuxtLink></li>
         </ul>
       </div>
 
@@ -65,12 +65,12 @@
         </span>
 
         <ul class="divide-y font-sans  text-teal-500 hover:text-teal-700">
-          <li><a href="#" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Главная</a></li>
-          <li><a href="#" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Сад</a></li>
-          <li><a href="#" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Кружки</a></li>
-          <li><a href="#" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Новости</a></li>
-          <li><a href="#" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Контакты</a></li>
-          <li><a href="#" @click="isOpen = false" class="my-8 w-full text-center font-semibold cta inline-block bg-teal-500 hover:bg-teal-700 hover:border-2  hover:border-yellow-500 px-3 py-2 rounded-full text-white">Войти</a></li>
+          <li><NuxtLink to="/" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Главная</NuxtLink></li>
+          <li><NuxtLink to="/detskij-sadik" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Сад</NuxtLink></li>
+          <li><NuxtLink to="/uslugi" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Кружки</NuxtLink></li>
+          <li><NuxtLink to="/" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Новости</NuxtLink></li>
+          <li><NuxtLink to="/kontakty" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Контакты</NuxtLink></li>
+          <li><NuxtLink to="/" @click="isOpen = false" class="my-8 w-full text-center font-semibold cta inline-block bg-teal-500 hover:bg-teal-700 hover:border-2  hover:border-yellow-500 px-3 py-2 rounded-full text-white">Войти</NuxtLink></li>
         </ul>
 
         <div class="follow">

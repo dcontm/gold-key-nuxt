@@ -3,6 +3,7 @@
     <banner />
     <navigation />
     
+    <!-- Баннер -->
     <div class="p-5 mt-4 px-5 bg-purple-100 md:flex md:w-full md:items-center">
       <div class="font-serif text-red-500 text-4xl text-center md:text-6xl md:w-1/2">
         Детский Центр в НЮР гор.Чебоксары
@@ -10,66 +11,172 @@
       </div>
       <img class="object-fit md:w-1/2" src="@/static/main-img.png">
     </div>
-
+    
+    <!-- Услуги -->
     <div class="w-full md:flex md:flex-wrap font-serif text-teal-600 text-xl md:text-2xl"> 
-      <div class="p-4 my-2 w-full md:w-1/2">
-        <img src="@/static/landing1.jpeg" class="md:float-left md:mr-4 ">
+      <nuxt-link to="/detskij-sadik" class="p-4 my-2 w-full md:w-1/2">
+        <div>
+          <img src="@/static/landing_1.jpg" class="md:float-left md:mr-4 rounded-br-full">
+          <button class="my-2 flex text-red-500 mt-4 hover:border-2 hover:border-red-500 hover:p-1 hover:rounded-full items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+            </svg>
+            Узнать больше
+          </button>
+        </div>
         <p>Детский сад</p>
         <ul class=" text-teal-500 text-base">
           <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-1 text-bold text-teal-700">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
             Группы от 1 до 6 лет
           </li>
-          <li>Доступные цены от 10500 ₽</li>
-          <li>Комфортное прибывание</li>
-          <li>Бесопасность</li>
-          <li>Собственная площадка для прогулок</li>
+          <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-1 text-bold text-teal-700">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Доступные цены от 10500 ₽
+          </li>
+          <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-1 text-bold text-teal-700">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Комфортное прибывание
+          </li>
+          <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-1 text-bold text-teal-700">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Бесопасность
+          </li>
+          <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-1 text-bold text-teal-700">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Собственная площадка для прогулок
+          </li>
         </ul>
-      </div>
+      </nuxt-link>
 
-      <div class="p-4 my-2 w-full md:w-1/2">
-        <img src="@/static/landing1.jpeg" class="md:float-left md:mr-4 ">
+      <nuxt-link to="/uslugi" class="p-4 my-2 w-full md:w-1/2">
+        <div>
+          <img src="@/static/landing_1.jpg" class="w-72 h-48 md:float-left md:mr-4 rounded-br-full">
+          <button class="flex text-red-500 mt-4 hover:border-2 hover:border-red-500 hover:p-1 hover:rounded-full items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+            </svg>
+            Узнать больше
+          </button>
+        </div>
         <p>Кружки</p>
         <ul class=" text-teal-500 text-base">
-          <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
+          <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-1 text-bold text-teal-700">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             Английский язык
           </li>
-          <li>
+          <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-1 text-bold text-teal-700">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
             Подготовка к школе
           </li>
-          <li>Логопед</li>
-          <li>Вокал</li>
-          <li>Карате</li>
-          <li>Фортепиано</li>
+          <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-1 text-bold text-teal-700">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Логопед
+          </li>
+          <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-1 text-bold text-teal-700">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Вокал
+          </li>
+          <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-1 text-bold text-teal-700">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Карате
+          </li>
+          <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-1 text-bold text-teal-700">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Фортепиано
+            </li>
         </ul>
-      </div>
-
+      </nuxt-link>
     </div>
+  
+    <!-- Контакты -->
+    <div class="bg-purple-100 p-4">
+      <p class="italic text-center font-serif text-red-500 text-3xl">Не откладывайте на потом!</p>
+      <div class="md:flex justify-around">
+        <div class="md:1/2">
+          <p class="text-center text-xl text-purple-700 font-serif m-3">Оставте заявку и мы вам перезвоним</p>
+          <form>
+            <div class="mb-3">
+              <input type="text" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500 dark:shadow-sm-light" placeholder="Ваше имя" required="">
+            </div>
+            <div class="mb-3">
+              <input type="text" id="phone" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500 dark:shadow-sm-light" placeholder="Ваш телефон" required="">
+            </div>
+            <div class="flex items-start mb-3">
+              <div class="flex items-center h-5">
+                <input id="terms" type="checkbox" value="" class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required="Нужно заолнить">
+              </div>
+              <label for="terms" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Согласие<nuxt-link to="/" class="text-blue-600 hover:underline dark:text-blue-500"> на обработку персональных данных</nuxt-link></label>
+            </div>
+            <button type="submit" class="text-white bg-teal-600 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-800 dark:focus:ring-teal-800">Отправить</button>
+          </form>
 
+        </div>
+        <div class="md:1/2">
+          <p class="text-center text-xl text-purple-700 font-serif m-3">Или напишите нам</p>
+          <div class="flex items-center justify-around">
+            <a href="#">
+              <img src="@/static/whats_app.svg" class="w-24 hover:w-28">
+            </a>
+            <a href="#">
+              <img src="@/static/telegram.svg" class="w-24 hover:w-28">
+            </a>
+            <a href="#">
+              <img src="@/static/viber.svg" class="w-24 hover:w-28">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Приимущества -->
     <div class="w-full md:flex md:flex-wrap font-serif text-purple-700 text-xl md:text-2xl">      
       <div class="p-4 my-2 w-full md:w-1/2">
-        <img src="@/static/landing1.jpeg" class="md:float-left md:mr-4 ">
+        <img src="@/static/landing_6.jpeg" class="md:float-left md:mr-4 rounded-br-full">
         <p>Профессионалы</p>
         <p class="italic text-purple-500 text-base">У нас работают только лучшие дипломированные специалисты. Весь персонал проходит тщательный отбор.</p>
       </div>
       <div class="p-4 my-2 w-full md:w-1/2">
-        <img src="@/static/landing1.jpeg" class="md:float-left md:mr-4">
+        <img src="@/static/landing_6.jpeg" class="md:float-left md:mr-4 rounded-br-full">
         <p>Надежность</p>
         <p class="italic text-purple-500 text-base">Мы работаем для вас уже более 10 лет и проявили себя в качетсве надежного помощника в воспитании ваших детей.</p>
       </div>
       <div class="p-4 my-2 w-full md:w-1/2">
-        <img src="@/static/landing1.jpeg" class="md:float-left md:mr-4">
+        <img src="@/static/landing_6.jpeg" class="md:float-left md:mr-4 rounded-br-full">
         <p>Безопасность</p>
         <p class="italic text-purple-500 text-base">Круглосуточное видеонаблюдение всей территории детского сада с длительным периодом хранения видеозаписей.</p>
       </div>
       <div class="p-4 my-2 w-full md:w-1/2">
-        <img src="@/static/landing1.jpeg" class="md:float-left md:mr-4">
+        <img src="@/static/landing_6.jpeg" class="md:float-left md:mr-4 rounded-br-full">
         <p>Забота о питании</p>
         <p class="italic text-purple-500 text-base">Здоровое пятиразовое питание, приготовленное на собственной кухне. Разработанный специалистами рацион.</p>
       </div>
     </div>
+
+    <!-- Подвал -->
+    <footer-bar/>
 
   </div>
     
@@ -78,11 +185,13 @@
 <script>
 import Banner from "@/components/Banner.vue"
 import Navigation from '~/components/Navigation.vue'
+import FooterBar from '~/components/FooterBar.vue'
 export default {
   name: 'IndexPage',
   components: {
     Navigation,
-    Banner
+    Banner,
+    FooterBar
   }
 
 }
