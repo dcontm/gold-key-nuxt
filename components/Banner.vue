@@ -10,7 +10,7 @@
       <button class="border-red-500 border-dashed border-2 rounded-full hover:border-solid px-4 py-1 ">Заказать звонок</button>
     </div>
     <div>
-      <p class="py-2">г.Чебоксары ул.Хузангая 23Д </p>
+      <p class="py-2">г.Чебоксары ул.Хузангая 22Д </p>
       <p class="text-teal-300">пн-вс 7:00-20.00 (МСК) </p>
     </div>
   </div>

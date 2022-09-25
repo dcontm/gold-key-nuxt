@@ -2,7 +2,9 @@
   <div>
     <banner />
     <navigation />
-    <div></div>
+    <div class="text-center font-serif mt-10">
+      <span class="text-3xl text-teal-700">Детский сад</span>
+    </div>
     <footer-bar />
   </div>
 </template>
