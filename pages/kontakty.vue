@@ -2,8 +2,10 @@
   <div>
     <banner />
     <navigation />
-    <div class="text-center font-serif mt-10">
-      <span class="text-3xl text-teal-700">Контакты</span>
+    <div class="text-center font-serif text-3xl text-teal-700 my-10">
+      <span>Детский сад</span>
+    </div>
+    <div class="text-center font-serif">
       <p class="text-2xl my-2 text-teal-500">Телефон: <a href="tel:+7-937-377–58–50" class="text-teal-700">+7 (937) 377–58–50</a></p>
       <p class="text-2xl my-2 text-teal-500">Email: <a href="mailto:gold-key21@mail.ru" class="text-teal-700">gold-key21@mail.ru</a></p>
       <p class="flex text-2xl my-2 text-teal-500 justify-center">Мы в соцсетях: 
