@@ -6,11 +6,17 @@
       <span>Детский сад</span>
     </div>
     <!-- Акция -->
-    <div class="flex justify-center bg-purple-100 px-5">
-      <div class="py-4 font-serif text-2xl text-red-600 justify-center">
+    <div class="md:flex justify-around items-center  bg-yellow-300 p-4">
+      <div class="py-4 font-serif text-4xl text-red-500 text-center justify-center">
         <p>Внимание действует акция!</p>
-        <p>Первый месяц посещения <span class="line-through">12 500 руб.</span> всего 10 500 руб.*</p>
-        <p class="bg-gray-400 text-gray-600 text-lg my-3 -px-5">*Акция действует до 15.09.2022г.</p>
+        <p class="text-2xl m-3">Первый месяц посещения <span class="line-through">12 500 руб.</span> всего 10 500 руб.*</p>
+        <p class="bg-gray-300 text-gray-600 text-lg my-3 -px-5">*Акция действует до 15.09.2022г.</p>
+      </div>
+      <div class="md:flex justify-around border-2 border-red-500 rounded-3xl p-5 m-5 bg-white">
+        <div class="md:1/2">
+          <p class="text-center text-2xl text-red-500 font-serif m-3">Оставте заявку и мы вам перезвоним</p>
+          <request-form />
+        </div>
       </div>
     </div>
     <!-- Контент -->
@@ -197,11 +203,13 @@
 import Banner from "@/components/Banner.vue"
 import Navigation from "@/components/Navigation.vue"
 import FooterBar from "@/components/FooterBar.vue"
+import RequestForm from '~/components/RequestForm.vue'
 export default {
   components: {
     Banner,
     Navigation,
-    FooterBar
+    FooterBar,
+    RequestForm
   },
   head() {
     return {
