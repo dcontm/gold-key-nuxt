@@ -3,7 +3,7 @@
     <banner />
     <navigation />
     <div class="text-center font-serif text-3xl text-teal-700 my-10">
-      <span>Детский сад</span>
+      <span>Контакты</span>
     </div>
     <div class="text-center font-serif">
       <p class="text-2xl my-2 text-teal-500">Телефон: <a href="tel:+7-937-377–58–50" class="text-teal-700">+7 (937) 377–58–50</a></p>
