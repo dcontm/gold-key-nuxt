@@ -20,8 +20,8 @@
       </div>
     </div>
     <!-- Контент -->
-    <div class="font-serif p-5 md:p-10 text-bold text-xl text-teal-700">
-      <p class="indent-2 text-bold text-xl">Частный детский садик «Золотой Ключик» был основан 1 сентября 2012 г. 
+    <div class="font-serif p-5 md:p-10 text-bold text-lg text-teal-700">
+      <p class="indent-2 text-bold text-lg">Частный детский садик «Золотой Ключик» был основан 1 сентября 2012 г. 
         Ориентирован на сохранение и поддержание здоровья ребенка. 
         В помещениях поддерживается оптимальная температура, в меню присутствуют безопасные, одобренные специалистами блюда. 
         В «Золотой Ключик» принимают детей от 1,0 года до 7 лет. 
@@ -30,7 +30,7 @@
         <img class="object-cover w-[300px] h-[300px] rounded-3xl" src="http://gold-key21.ru/wp-content/uploads/2014/06/zdanie-22d.jpg">
       </div>
       <p class="underline py-3 text-xl text-teal-900">Группы в «Золотом ключике» расположены по разным этажам:</p>
-      <ul class="indent-2 text-lg">
+      <ul class="indent-2">
         <li>I- группа дети от 1 года до 2 лет.</li>
         <li>II- группа дети от 2 до 3 лет.</li>
         <li>III- группа дети от 3 до 4 лет.</li>

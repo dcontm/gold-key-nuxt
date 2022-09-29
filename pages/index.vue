@@ -13,7 +13,7 @@
     </div>
     
     <!-- Услуги -->
-    <div class="w-full md:flex md:flex-wrap font-serif text-teal-600 text-xl md:text-2xl"> 
+    <div class="w-full md:flex md:flex-wrap font-serif text-teal-900 text-xl md:text-2xl"> 
       <nuxt-link to="/detskij-sadik" class="p-4 my-2 w-full md:w-1/2">
         <div>
           <img src="@/static/landing_1.jpg" class="md:float-left md:mr-4 rounded-br-full">
@@ -25,7 +25,7 @@
           </button>
         </div>
         <p>Детский сад</p>
-        <ul class=" text-teal-500 text-base">
+        <ul class=" text-teal-700 text-base">
           <li class="flex">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-1 text-bold text-teal-700">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -48,7 +48,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-1 text-bold text-teal-700">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            Бесопасность
+            Система видеонаблюдения
           </li>
           <li class="flex">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-1 text-bold text-teal-700">
@@ -70,7 +70,7 @@
           </button>
         </div>
         <p>Кружки</p>
-        <ul class=" text-teal-500 text-base">
+        <ul class=" text-teal-700 text-base">
           <li class="flex">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-1 text-bold text-teal-700">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -101,12 +101,6 @@
             </svg>
             Карате
           </li>
-          <li class="flex">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-1 text-bold text-teal-700">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            Фортепиано
-            </li>
         </ul>
       </nuxt-link>
     </div>
@@ -116,11 +110,11 @@
       <p class="italic text-center font-serif text-red-500 text-3xl">Не откладывайте на потом!</p>
       <div class="md:flex justify-around">
         <div class="md:1/2">
-          <p class="text-center text-xl text-purple-700 font-serif m-3">Оставте заявку и мы вам перезвоним</p>
+          <p class="text-center text-xl text-teal-900 font-serif m-3">Оставте заявку и мы вам перезвоним</p>
           <request-form />
         </div>
         <div class="md:1/2">
-          <p class="text-center text-xl text-purple-700 font-serif m-3">Или напишите нам</p>
+          <p class="text-center text-xl text-teal-900 font-serif m-3">Или напишите нам</p>
           <div class="flex items-center justify-around">
             <a href="#">
               <img src="@/static/whats_app.svg" class="w-24 hover:w-28">
@@ -137,26 +131,26 @@
     </div>
   
     <!-- Приимущества -->
-    <div class="w-full md:flex md:flex-wrap font-serif text-purple-700 text-xl md:text-2xl">      
+    <div class="w-full md:flex md:flex-wrap font-serif text-teal-900 text-xl md:text-2xl">      
       <div class="p-4 my-2 w-full md:w-1/2">
         <img src="@/static/landing_6.jpeg" class="md:float-left md:mr-4 rounded-br-full">
         <p>Профессионалы</p>
-        <p class="italic text-purple-500 text-base">У нас работают только лучшие дипломированные специалисты. Весь персонал проходит тщательный отбор.</p>
+        <p class="italic text-teal-700 text-base">У нас работают только лучшие дипломированные специалисты. Весь персонал проходит тщательный отбор.</p>
       </div>
       <div class="p-4 my-2 w-full md:w-1/2">
         <img src="@/static/landing_6.jpeg" class="md:float-left md:mr-4 rounded-br-full">
         <p>Надежность</p>
-        <p class="italic text-purple-500 text-base">Мы работаем для вас уже более 10 лет и проявили себя в качетсве надежного помощника в воспитании ваших детей.</p>
+        <p class="italic text-teal-700 text-base">Мы работаем для вас уже более 10 лет и проявили себя в качетсве надежного помощника в воспитании ваших детей.</p>
       </div>
       <div class="p-4 my-2 w-full md:w-1/2">
         <img src="@/static/landing_6.jpeg" class="md:float-left md:mr-4 rounded-br-full">
         <p>Безопасность</p>
-        <p class="italic text-purple-500 text-base">Круглосуточное видеонаблюдение всей территории детского сада с длительным периодом хранения видеозаписей.</p>
+        <p class="italic text-teal-700 text-base">Круглосуточное видеонаблюдение всей территории детского сада с длительным периодом хранения видеозаписей.</p>
       </div>
       <div class="p-4 my-2 w-full md:w-1/2">
         <img src="@/static/landing_6.jpeg" class="md:float-left md:mr-4 rounded-br-full">
         <p>Забота о питании</p>
-        <p class="italic text-purple-500 text-base">Здоровое пятиразовое питание, приготовленное на собственной кухне. Разработанный специалистами рацион.</p>
+        <p class="italic text-teal-700 text-base">Здоровое пятиразовое питание, приготовленное на собственной кухне. Разработанный специалистами рацион.</p>
       </div>
     </div>
 
