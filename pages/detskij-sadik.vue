@@ -89,6 +89,61 @@
         </li>
       </ul>
     </div>
+
+    <!-- Цены -->
+    <div class="font-serif text-center mr- md:flex md:justify-around">
+      <div class="m-5 md:w-80">
+        <div class="text-white bg-red-500 text-2xl text-bold rounded-t-3xl h-20 pt-3">
+          <p>Неполный день</p>
+          <p>07:00 - 12:00</p>
+        </div>
+        <div class="border-red-500 border-2 rounded-b-3xl text-teal-700">
+          <p class="mt-5 text-4xl text-bold text-teal-900">от 9000 руб.
+          <p class="text-sm text-teal-900">Месяц</p>
+          <p class="mt-3">- присмотр и уход</p>
+          <p>- 3-х разовое питание</p>
+          <p>- прогулка</p>
+          <p>- развитие</p>
+          <p class="my-4 text-bold underline underline-offset-4 decoration-dashed hover:text-teal-900  hover:decoration-red-500">узнать подробности</p>
+          <button class="py-2 px-8 my-8 text-white text-2xl bg-red-500 rounded-3xl hover:border-2">Подать заявку</button>
+        </div>
+      </div>
+
+      <div class="m-5 md:w-80">
+        <div class="text-white bg-red-500 text-2xl text-bold rounded-t-3xl h-20 pt-3">
+          <p>Полный день</p>
+          <p>07:00 - 18:00</p>
+        </div>
+        <div class="border-red-500 border-2 rounded-b-3xl text-teal-700">
+          <p class="mt-5 text-4xl text-bold text-teal-900">от 12500 руб.
+          <p class="text-sm text-teal-900">Месяц</p>
+          <p class="mt-3">- присмотр и уход</p>
+          <p>- 5-х разовое питание</p>
+          <p>- прогулка</p>
+          <p>- сон</p>
+          <p>- развитие</p>
+          <p class="my-4 text-bold underline underline-offset-4 decoration-dashed hover:text-teal-900  hover:decoration-red-500">узнать подробности</p>
+          <button class="py-2 px-8 my-8 text-white text-2xl bg-red-500 rounded-3xl hover:border-2">Подать заявку</button>
+        </div>
+      </div>
+
+      <div class="m-5 md:w-80">
+        <div class="text-white bg-red-500 text-2xl text-bold rounded-t-3xl h-20 pt-7">
+          <p>Разовое посещение</p>
+        </div>
+        <div class="border-red-500 border-2 rounded-b-3xl text-teal-700">
+          <p class="mt-5 text-4xl text-bold text-teal-900">от 1000 руб.
+          <p class="text-sm text-teal-900">Месяц</p>
+          <p class="mt-3">- присмотр и уход</p>
+          <p>- питание</p>
+          <p>- развитие</p>
+          <p class="my-4 py-4 text-bold underline underline-offset-4 decoration-dashed hover:text-teal-900  hover:decoration-red-500">узнать подробности</p>
+          <button class="py-2 px-8 my-8 text-white text-2xl bg-red-500 rounded-3xl hover:border-2">Подать заявку</button>
+        </div>
+      </div>
+    </div>
+
+
     <div class="bg-purple-100 md:px-5 my-5 text-bold text-teal-900 text-xl font-serif text-center">
       <p>Количество мест ограничено.</p>
       <p><a href="tel:8-937-377-58-50">тел. 8-937-377-58-50</a></p>
@@ -195,6 +250,7 @@
         </a>
       </div>
     </div>
+
     <footer-bar />
   </div>
 </template>
