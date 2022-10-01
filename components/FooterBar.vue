@@ -17,7 +17,7 @@
                   <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Ссылки</h2>
                   <ul class="text-gray-600 dark:text-gray-400">
                       <li class="mb-2">
-                          <nuxt-link to="/" class="hover:underline">Новости</nuxt-link>
+                          <nuxt-link to="/news" class="hover:underline">Новости</nuxt-link>
                       </li>
                       <li class="mb-2">
                           <nuxt-link to="/" class="hover:underline">Вакансии</nuxt-link>

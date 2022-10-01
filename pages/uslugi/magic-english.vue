@@ -154,13 +154,28 @@
         </li>
       </ul>
     </div>
+    <gallery-with-form :gallery="gallery" />
     <footer-bar />
   </div>
 </template>
 
 <script>
+import GalleryWithForm from '~/components/GalleryWithForm.vue'
 export default {
-
+  components: {
+    GalleryWithForm
+  },
+  data () {
+    return {
+      gallery:[
+        {uri: require("@/static/uslugi/img.svg")},
+        {uri: require("@/static/uslugi/img.svg")},
+        {uri: require("@/static/uslugi/img.svg")},
+        {uri: require("@/static/uslugi/img.svg")},
+        {uri: require("@/static/uslugi/img.svg")},
+      ]
+    }
+  }
 }
 </script>
 
