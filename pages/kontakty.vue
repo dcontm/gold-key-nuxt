@@ -6,24 +6,24 @@
       <span>Контакты</span>
     </div>
     <div class="text-center font-serif">
-      <p class="text-2xl my-2 text-teal-500">Телефон: <a href="tel:+7-937-377–58–50" class="text-teal-700">+7 (937) 377–58–50</a></p>
+      <p class="text-2xl my-2 text-teal-500">Телефон: <a href="tel:89373775850" class="text-teal-700">+7 (937) 377–58–50</a></p>
       <p class="text-2xl my-2 text-teal-500">Email: <a href="mailto:gold-key21@mail.ru" class="text-teal-700">gold-key21@mail.ru</a></p>
       <p class="flex text-2xl my-2 text-teal-500 justify-center">Мы в соцсетях: 
-        <a href="#" class="px-1">
+        <a href="https://vk.com/goldkey21" class="px-1">
           <img src="@/static/vk-logo.svg" class="w-8 hover:w-10">
         </a>
-        <a href="#" class="px-1">
+        <a href="https://www.instagram.com/detskijsadik21.ru" class="px-1">
           <img src="@/static/instagram-logo.svg" class="w-8 hover:w-10">
         </a>
       </p>
       <p class="flex text-2xl my-2 text-teal-500 justify-center">Мы в мессенджерах: 
-        <a href="#">
+        <a href="https://api.whatsapp.com/send?phone=89613471117">
           <img src="@/static/whats_app.svg" class="w-8 hover:w-10">
         </a>
         <a href="#">
           <img src="@/static/telegram.svg" class="w-8 hover:w-10">
         </a>
-        <a href="#">
+        <a href="viber://add?number=89613471117">
           <img src="@/static/viber.svg" class="w-8 hover:w-10">
         </a>
       </p>

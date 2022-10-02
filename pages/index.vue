@@ -4,7 +4,7 @@
     <navigation />
     
     <!-- Баннер -->
-    <div class="p-5 mt-4 px-5 bg-purple-100 md:flex md:w-full md:items-center">
+    <div class="p-5 mt-4 px-5 bg-sky-100 md:flex md:w-full md:items-center">
       <div class="font-serif text-red-500 text-4xl text-center md:text-6xl md:w-1/2">
         Детский Центр в НЮР гор.Чебоксары
         <div class="italic text-yellow-500 text-xl pt-4 md:text-3xl md:pt-8">Лучшее качество по доступным ценам</div>
@@ -106,7 +106,7 @@
     </div>
   
     <!-- Контакты -->
-    <div class="bg-purple-100 p-4">
+    <div class="bg-sky-100 p-4">
       <p class="italic text-center font-serif text-red-500 text-3xl">Не откладывайте на потом!</p>
       <div class="md:flex justify-around">
         <div class="md:1/2">
@@ -116,13 +116,13 @@
         <div class="md:1/2">
           <p class="text-center text-xl text-teal-900 font-serif m-3">Или напишите нам</p>
           <div class="flex items-center justify-around">
-            <a href="#">
+            <a href="https://api.whatsapp.com/send?phone=89613471117">
               <img src="@/static/whats_app.svg" class="w-24 hover:w-28">
             </a>
             <a href="#">
               <img src="@/static/telegram.svg" class="w-24 hover:w-28">
             </a>
-            <a href="#">
+            <a href="viber://add?number=89613471117">
               <img src="@/static/viber.svg" class="w-24 hover:w-28">
             </a>
           </div>

@@ -26,9 +26,11 @@
         В помещениях поддерживается оптимальная температура, в меню присутствуют безопасные, одобренные специалистами блюда. 
         В «Золотой Ключик» принимают детей от 1,0 года до 7 лет. 
       </p>
+      <!--
       <div class="flex md:block justify-start md:float-right">
         <img class="object-cover w-[300px] h-[300px] rounded-3xl" src="http://gold-key21.ru/wp-content/uploads/2014/06/zdanie-22d.jpg">
       </div>
+      -->
       <p class="underline py-3 text-xl text-teal-900">Группы в «Золотом ключике» расположены по разным этажам:</p>
       <ul class="indent-2">
         <li>I- группа дети от 1 года до 2 лет.</li>
@@ -90,6 +92,8 @@
       </ul>
     </div>
 
+    <gallery-with-form :gallery="gallery"/>
+
     <!-- Цены -->
     <div class="font-serif text-center mr- md:flex md:justify-around">
       <div class="m-5 md:w-80">
@@ -146,7 +150,7 @@
 
     <div class="bg-purple-100 md:px-5 my-5 text-bold text-teal-900 text-xl font-serif text-center">
       <p>Количество мест ограничено.</p>
-      <p><a href="tel:8-937-377-58-50">тел. 8-937-377-58-50</a></p>
+      <p><a href="tel:89373775850">тел. 8-937-377-58-50</a></p>
     </div>
     
     <!-- Галерея -->
@@ -279,6 +283,22 @@ export default {
           body: true
         },
 
+      ]
+    }
+  },
+  data () {
+    return {
+      gallery:[
+        {uri: require("@/static/detskij-sadik/gallery/1.jpg")},
+        {uri: require("@/static/detskij-sadik/gallery/2.jpg")},
+        {uri: require("@/static/detskij-sadik/gallery/3.jpg")},
+        {uri: require("@/static/detskij-sadik/gallery/4.jpg")},
+        {uri: require("@/static/detskij-sadik/gallery/5.jpg")},
+        {uri: require("@/static/detskij-sadik/gallery/6.jpg")},
+        {uri: require("@/static/detskij-sadik/gallery/7.jpg")},
+        {uri: require("@/static/detskij-sadik/gallery/8.jpg")},
+        {uri: require("@/static/detskij-sadik/gallery/9.jpg")},
+        {uri: require("@/static/detskij-sadik/gallery/10.jpg")},
       ]
     }
   }
