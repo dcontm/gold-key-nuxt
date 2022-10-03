@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="submit">
-    <div v-if="formSent" class="h-10 rounded-3xl justify-center items-center flex bg-green-600 my-4">
+    <div v-if="formSent" class="h-10 rounded-xl justify-center items-center flex bg-green-600 my-4">
       <span class="text-center font-serif text-lg text-white font-bold">Заявка принята!</span>
     </div>
     <div class="mb-3">
@@ -11,7 +11,7 @@
     </div>
     <div class="flex items-start mb-3">
       <div class="flex items-center h-5">
-        <input id="terms" type="checkbox" value="" class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required="Нужно заолнить">
+        <input v-model="checked" id="terms" type="checkbox" value="" class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required="Нужно заолнить">
       </div>
       <label for="terms" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Согласие<nuxt-link to="/rules" class="text-blue-600 hover:underline dark:text-blue-500"> на обработку персональных данных</nuxt-link></label>
     </div>
@@ -26,7 +26,8 @@ export default {
     return {
       formSent: false,
       name: '',
-      phoneNumber: ''
+      phoneNumber: '',
+      checked: false
     }
   },
   methods: {
@@ -34,12 +35,13 @@ export default {
       this.formSent = true
       this.name = ''
       this.phoneNumber = ''
+      this.checked = false
       setTimeout( () => {
         this.formSent = false
         if (this.$store.state.requestForm.requestForm) {
           this.$store.commit('requestForm/changeRequestFormStatus')
         }
-      }, 2500)
+      }, 1500)
     }
   }
   
