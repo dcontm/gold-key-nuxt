@@ -14,7 +14,7 @@
       </div>
       <div class="md:flex justify-around border-2 border-red-500 rounded-3xl p-5 m-5 bg-white">
         <div class="md:1/2">
-          <p class="text-center text-2xl text-red-500 font-serif m-3">Оставте заявку и мы вам перезвоним</p>
+          <p class="text-center text-2xl text-red-500 font-serif m-3">Оставьте заявку и мы вам перезвоним</p>
           <request-form />
         </div>
       </div>
@@ -26,11 +26,7 @@
         В помещениях поддерживается оптимальная температура, в меню присутствуют безопасные, одобренные специалистами блюда. 
         В «Золотой Ключик» принимают детей от 1,0 года до 7 лет. 
       </p>
-      <!--
-      <div class="flex md:block justify-start md:float-right">
-        <img class="object-cover w-[300px] h-[300px] rounded-3xl" src="http://gold-key21.ru/wp-content/uploads/2014/06/zdanie-22d.jpg">
-      </div>
-      -->
+
       <p class="underline py-3 text-xl text-teal-900">Группы в «Золотом ключике» расположены по разным этажам:</p>
       <ul class="indent-2">
         <li>I- группа дети от 1 года до 2 лет.</li>
@@ -96,6 +92,7 @@
 
     <!-- Цены -->
     <div class="font-serif text-center mr- md:flex md:justify-around">
+
       <div class="m-5 md:w-80">
         <div class="text-white bg-red-500 text-2xl text-bold rounded-t-3xl h-20 pt-3">
           <p>Неполный день</p>
@@ -108,8 +105,8 @@
           <p>- 3-х разовое питание</p>
           <p>- прогулка</p>
           <p>- развитие</p>
-          <p class="my-4 text-bold underline underline-offset-4 decoration-dashed hover:text-teal-900  hover:decoration-red-500">узнать подробности</p>
-          <button class="py-2 px-8 my-8 text-white text-2xl bg-red-500 rounded-3xl hover:border-2">Подать заявку</button>
+          <p @click="getRequestForm" class="my-4 text-bold underline underline-offset-4 decoration-dashed hover:text-teal-900  hover:decoration-red-500">узнать подробности</p>
+          <button @click="getRequestForm" class="py-2 px-8 my-8 text-white text-2xl bg-red-500 rounded-3xl hover:border-2">Подать заявку</button>
         </div>
       </div>
 
@@ -126,8 +123,8 @@
           <p>- прогулка</p>
           <p>- сон</p>
           <p>- развитие</p>
-          <p class="my-4 text-bold underline underline-offset-4 decoration-dashed hover:text-teal-900  hover:decoration-red-500">узнать подробности</p>
-          <button class="py-2 px-8 my-8 text-white text-2xl bg-red-500 rounded-3xl hover:border-2">Подать заявку</button>
+          <p @click="getRequestForm" class="my-4 text-bold underline underline-offset-4 decoration-dashed hover:text-teal-900  hover:decoration-red-500">узнать подробности</p>
+          <button @click="getRequestForm" class="py-2 px-8 my-8 text-white text-2xl bg-red-500 rounded-3xl hover:border-2">Подать заявку</button>
         </div>
       </div>
 
@@ -141,12 +138,11 @@
           <p class="mt-3">- присмотр и уход</p>
           <p>- питание</p>
           <p>- развитие</p>
-          <p class="my-4 py-4 text-bold underline underline-offset-4 decoration-dashed hover:text-teal-900  hover:decoration-red-500">узнать подробности</p>
-          <button class="py-2 px-8 my-8 text-white text-2xl bg-red-500 rounded-3xl hover:border-2">Подать заявку</button>
+          <p @click="getRequestForm" class="my-4 py-4 text-bold underline underline-offset-4 decoration-dashed hover:text-teal-900  hover:decoration-red-500">узнать подробности</p>
+          <button @click="getRequestForm" class="py-2 px-8 my-8 text-white text-2xl bg-red-500 rounded-3xl hover:border-2">Подать заявку</button>
         </div>
       </div>
     </div>
-
 
     <div class="bg-purple-100 md:px-5 my-5 text-bold text-teal-900 text-xl font-serif text-center">
       <p>Количество мест ограничено.</p>
@@ -254,7 +250,7 @@
         </a>
       </div>
     </div>
-
+  
     <footer-bar />
   </div>
 </template>
@@ -301,9 +297,12 @@ export default {
         {uri: require("@/static/detskij-sadik/gallery/10.jpg")},
       ]
     }
+  },
+  methods: {
+    getRequestForm () {
+      this.$store.commit('requestForm/changeRequestFormStatus')
+    }
   }
-
-
 }
 </script>
 

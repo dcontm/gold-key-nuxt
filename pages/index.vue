@@ -110,7 +110,7 @@
       <p class="italic text-center font-serif text-red-500 text-3xl">Не откладывайте на потом!</p>
       <div class="md:flex justify-around">
         <div class="md:1/2">
-          <p class="text-center text-xl text-teal-900 font-serif m-3">Оставте заявку и мы вам перезвоним</p>
+          <p class="text-center text-xl text-teal-900 font-serif m-3">Оставьте заявку и мы вам перезвоним</p>
           <request-form />
         </div>
         <div class="md:1/2">

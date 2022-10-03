@@ -94,7 +94,7 @@
 import GalleryWithForm from '~/components/GalleryWithForm.vue'
 export default {
   components: {
-    GalleryWithForm
+    GalleryWithForm,
   },
   data () {
     return {

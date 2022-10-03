@@ -16,8 +16,8 @@
       </div>
     </div>
 
-    <div v-if="requestFormWidget" class="w-full h-screen bg-purple-100 z-[999999] absolute -mt-[80px] flex items-center justify-center">
-      <div class="w-80 flex border-2 border-red-500 rounded-3xl">
+    <div v-if="$store.state.requestForm.requestForm" class="z-10 w-full h-screen fixed bg-gray-200 bg-opacity-50 -mt-[80px] flex items-center justify-center">
+      <div class="w-80 md:w-96 bg-white flex border-2 border-red-500 rounded-3xl bg-opacity-100">
         <div class="m-10">
           <p class="text-2xl text-center text-red-500 font-serif mb-5">Оставьте заявку и мы вам перезвоним!</p>
           <request-form/>
@@ -27,6 +27,7 @@
         </svg>
       </div>
     </div>
+  
   </div>
 </template>
 
@@ -47,8 +48,7 @@ export default {
 
   methods: {
     getRequestForm() {
-      this.requestFormWidget = !this.requestFormWidget
-
+      this.$store.commit('requestForm/changeRequestFormStatus')
     }
   }
 

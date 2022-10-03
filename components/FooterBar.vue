@@ -31,7 +31,7 @@
                   <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Документы</h2>
                   <ul class="text-gray-600 dark:text-gray-400">
                       <li class="mb-4">
-                          <nuxt-link to="/" class="hover:underline">Политика обработки персональных данных</nuxt-link>
+                          <nuxt-link to="/rules" class="hover:underline">Политика обработки персональных данных</nuxt-link>
                       </li>
                   </ul>
               </div>
