@@ -39,6 +39,9 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap'
+    
 
   ],
 
