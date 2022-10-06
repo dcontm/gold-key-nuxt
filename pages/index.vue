@@ -4,7 +4,7 @@
     <navigation />
     
     <!-- Баннер -->
-    <div class="p-5 mt-4 px-5 bg-sky-100 md:flex md:w-full md:items-center">
+    <div class="p-5 my-4 px-5 bg-sky-100 md:flex md:w-full md:items-center">
       <div class="font-serif text-red-500 text-4xl text-center md:text-6xl md:w-1/2">
         Детский Центр в НЮР гор.Чебоксары
         <div class="italic text-yellow-500 text-xl pt-4 md:text-3xl md:pt-8">Лучшее качество по доступным ценам</div>
@@ -13,7 +13,7 @@
     </div>
     
     <!-- Услуги -->
-    <div class="w-full md:flex md:flex-wrap font-serif text-teal-900 text-xl md:text-2xl"> 
+    <div class="w-full my-3 md:flex md:flex-wrap font-serif text-teal-900 text-xl md:text-2xl"> 
       <nuxt-link to="/detskij-sadik" class="p-4 my-2 w-full md:w-1/2">
         <div>
           <img src="@/static/landing_1.jpg" class="md:float-left md:mr-4 rounded-br-full">
@@ -106,7 +106,7 @@
     </div>
   
     <!-- Контакты -->
-    <div class="bg-sky-100 p-4">
+    <div class="bg-sky-100 p-4 my-3">
       <p class="italic text-center font-serif text-red-500 text-3xl">Не откладывайте на потом!</p>
       <div class="md:flex justify-around">
         <div class="md:1/2">
@@ -131,7 +131,7 @@
     </div>
   
     <!-- Приимущества -->
-    <div class="w-full md:flex md:flex-wrap font-serif text-teal-900 text-xl md:text-2xl">      
+    <div class="w-full my-3 md:flex md:flex-wrap font-serif text-teal-900 text-xl md:text-2xl">      
       <div class="p-4 my-2 w-full md:w-1/2">
         <img src="@/static/landing_6.jpeg" class="md:float-left md:mr-4 rounded-br-full">
         <p>Профессионалы</p>
