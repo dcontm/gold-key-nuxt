@@ -4,20 +4,21 @@
       <span class="text-center font-serif text-lg text-white font-bold">Заявка принята!</span>
     </div>
     <div v-if="formSentError" class="h-10 rounded-xl justify-center items-center flex bg-red-600 my-4">
-      <span class="text-center font-serif text-lg text-white font-bold">Ошибка на стороне сервера!</span>
+      <span class="text-center font-serif text-base text-white font-bold">Ошибка на стороне сервера!</span>
     </div>
     <div class="mb-3">
-      <input v-model="$v.name.$model" @blur="$v.name.$touch()" @input="$v.name.$touch()" type="text" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500 dark:shadow-sm-light" placeholder="Ваше имя">
-      <p v-for="error in nameErrors" class="text-red-600 border-2 border-red-600  mt-1 rounded-lg px-2">{{error}}</p>
+      <input v-model.trim="$v.name.$model" @blur="$v.name.$touch()" @input="$v.name.$touch()"  type="text" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500 dark:shadow-sm-light" placeholder="Ваше имя">
+      <p v-for="error in nameErrors" class="text-red-600  text-xs border-red-600  mt-1 rounded-md px-2">{{error}}</p>
     </div>
     <div class="mb-3">
-      <input v-model="$v.phoneNumber.$model" @blur="$v.phoneNumber.$touch()" @input="$v.phoneNumber.$touch()" type="text" id="phone" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500 dark:shadow-sm-light" placeholder="Ваш телефон">
-      <p v-for="error in phoneNumberErrors" class="text-red-600 border-2 border-red-600  mt-1 rounded-lg px-2">{{error}}</p>
+      <input v-model.trim="$v.phoneNumber.$model" @blur="$v.phoneNumber.$touch()" @input="$v.phoneNumber.$touch()" type="text" id="phone" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500 dark:shadow-sm-light" placeholder="Ваш телефон">
+      <p v-for="error in phoneNumberErrors" class="text-red-600  text-xs border-red-600  mt-1 rounded-md px-2">{{error}}</p>
     </div>
     
     <div class="flex items-start mb-3">
       <div class="flex items-center h-5">
-        <input v-model="checked" id="terms" type="checkbox" value="" class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800">
+        <input v-model="$v.checkbox.$model" @blur="$v.checkbox.$touch()" @input="$v.checkbox.$touch()" id="terms" type="checkbox" value="" class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800">
+         <p v-for="error in checkboxErrors" class="text-red-600  border-red-600 text-xs mx-2 my-2 rounded-md px-2">{{error}}</p>
       </div>
       <label for="terms" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Согласие<nuxt-link to="/rules" class="text-blue-600 hover:underline dark:text-blue-500"> на обработку персональных данных</nuxt-link></label>
     </div>
@@ -27,22 +28,24 @@
 
 <script>
 
-import { required, minLength} from 'vuelidate/lib/validators'
+import { required, minLength, maxLength, sameAs} from 'vuelidate/lib/validators'
 
 export default {
   data () {
     return {
+      x:true,
       formSent: false,
       formSentError: false,
       name: '',
       phoneNumber: '',
-      checked: false
+      checkbox: false,
     }
   },
 
   validations: {
-    name: {required, minLength: minLength(4)},
-    phoneNumber: {required, minLength: minLength(6)}
+    name: {required, minLength: minLength(4), maxLength: maxLength(30)},
+    phoneNumber: {required, minLength: minLength(6), maxLength: maxLength(11)},
+    checkbox: {checked (val) {return val}}
   },
 
 
@@ -50,15 +53,23 @@ export default {
     nameErrors () {
       const errors = []
       if (!this.$v.name.$dirty) return errors
-      !this.$v.name.minLength && errors.push('Логин должен содержать не менее 4 символов')
-      !this.$v.name.required && errors.push('Введите Логин.')
+      !this.$v.name.minLength && errors.push('Имя должно содержать не менее 3 символов')
+      !this.$v.name.maxLength && errors.push('Имя должно содержать не более 30 символов')
+      !this.$v.name.required && errors.push('Введите имя.')
       return errors
     },
      phoneNumberErrors () {
       const errors = []
       if (!this.$v.phoneNumber.$dirty) return errors
-      !this.$v.phoneNumber.minLength && errors.push('Пароль должен содержать не менее 6 символов')
-      !this.$v.phoneNumber.required && errors.push('Введите пароль.')
+      !this.$v.phoneNumber.minLength && errors.push('Номер должен содержать не менее 6 символов')
+      !this.$v.phoneNumber.maxLength && errors.push('Номер должен сожержать не более из 11 символов')
+      !this.$v.phoneNumber.required && errors.push('Введите номер телефона.')
+      return errors
+    },
+    checkboxErrors () {
+      const errors = []
+      if (!this.$v.checkbox.$dirty) return errors
+      !this.$v.checkbox.checked && errors.push('Примите правила.')
       return errors
     },
   },
@@ -66,17 +77,31 @@ export default {
   methods: {
     submit() {
       this.formSentError = false
-      this.formSent = true
-      this.name = ''
-      this.phoneNumber = ''
-      this.checked = false
 
-      setTimeout( () => {
-        this.formSent = false
-        if (this.$store.state.requestForm.requestForm) {
-          this.$store.commit('requestForm/changeRequestFormStatus')
+      if (this.$v.$invalid) {
+          this.$v.$touch()
+          return
         }
-      }, 1500)
+        else {
+          this.formSent = true
+
+          const formData = {
+            name: this.name,
+            phoneNumber: this.phoneNumber
+          }
+          console.log(formData)
+      
+          this.$nextTick(() => { this.$v.$reset(); }); //очистка формы при удачной отправке
+          setTimeout( () => {
+            this.formSent = false
+            this.name = ''
+            this.phoneNumber = ''
+            this.checkbox = false
+            if (this.$store.state.requestForm.requestForm) {
+              this.$store.commit('requestForm/changeRequestFormStatus')
+            }
+          }, 1500)
+        }
     }
   }
   
