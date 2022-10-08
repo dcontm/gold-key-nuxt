@@ -9,7 +9,7 @@
     </div>
     <div class="md:w-1/3 border-red-500 border-2 rounded-3xl mt-10 md:mt-1 p-5 items-center h-96">
       <p class="font-serif text-teal-900 text-xl text-center my-5">Оставьте заявку и мы вам перезвоним!</p>
-      <request-form />
+      <request-form target="Форма Дет.сад/Услуги"/>
     </div>
   </div>
 </template>

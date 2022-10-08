@@ -15,7 +15,7 @@
       <div class="md:flex justify-around border-2 border-red-500 rounded-3xl p-5 m-5 bg-white">
         <div class="md:1/2">
           <p class="text-center text-2xl text-red-500 font-serif m-3">Оставьте заявку и мы вам перезвоним</p>
-          <request-form />
+          <request-form target="Детский сад" />
         </div>
       </div>
     </div>

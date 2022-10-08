@@ -111,7 +111,7 @@
       <div class="md:flex justify-around">
         <div class="md:1/2">
           <p class="text-center text-xl text-teal-900 font-serif m-3">Оставьте заявку и мы вам перезвоним</p>
-          <request-form />
+          <request-form target="Главная"/>
         </div>
         <div class="md:1/2">
           <p class="text-center text-xl text-teal-900 font-serif m-3">Или напишите нам</p>

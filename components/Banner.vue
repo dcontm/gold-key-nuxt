@@ -20,7 +20,7 @@
       <div class="w-80 md:w-96 bg-white flex border-2 border-red-500 rounded-3xl bg-opacity-100">
         <div class="m-10">
           <p class="text-2xl text-center text-red-500 font-serif mb-5">Оставьте заявку и мы вам перезвоним!</p>
-          <request-form />
+          <request-form target="Баннер"/>
         </div>
         <svg @click="getRequestForm" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-red-500 text-bold mr-3">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />

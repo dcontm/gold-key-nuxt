@@ -31,9 +31,9 @@
 import { required, minLength, maxLength, sameAs} from 'vuelidate/lib/validators'
 
 export default {
+  props: ["target"],
   data () {
     return {
-      x:true,
       formSent: false,
       formSentError: false,
       name: '',
@@ -75,7 +75,7 @@ export default {
   },
 
   methods: {
-    submit() {
+     async submit() {
       this.formSentError = false
 
       if (this.$v.$invalid) {
@@ -83,24 +83,36 @@ export default {
           return
         }
         else {
-          this.formSent = true
-
+          console.log(this.target)
           const formData = {
+            target: this.target,
             name: this.name,
-            phoneNumber: this.phoneNumber
+            phone: this.phoneNumber
           }
-          console.log(formData)
-      
-          this.$nextTick(() => { this.$v.$reset(); }); //очистка формы при удачной отправке
-          setTimeout( () => {
-            this.formSent = false
-            this.name = ''
-            this.phoneNumber = ''
-            this.checkbox = false
-            if (this.$store.state.requestForm.requestForm) {
-              this.$store.commit('requestForm/changeRequestFormStatus')
-            }
-          }, 1500)
+          
+          try {
+            const resp = await this.$axios.$post("/notify",formData)
+            this.formSent = true
+            this.$nextTick(() => { this.$v.$reset(); }); //очистка формы при удачной отправке
+            setTimeout( () => {
+              this.formSent = false
+              this.name = ''
+              this.phoneNumber = ''
+              this.checkbox = false
+              if (this.$store.state.requestForm.requestForm) {
+                this.$store.commit('requestForm/changeRequestFormStatus')
+              }
+            }, 1500)
+
+          } catch(err) {
+            console.log(err)
+            this.formSentError = true
+            setTimeout( ()=> {
+              this.formSentError = false
+            }, 3000)
+
+          }
+
         }
     }
   }
