@@ -28,7 +28,7 @@
           <li><NuxtLink to="/uslugi" class="hover:border-b-2 hover:border-yellow-500 hover:pb-1">Кружки</NuxtLink></li>
           <li><NuxtLink to="/news" class="hover:border-b-2 hover:border-yellow-500 hover:pb-1">Новости</NuxtLink></li>
           <li><NuxtLink to="/kontakty" class="hover:border-b-2 hover:border-yellow-500 hover:pb-1">Контакты</NuxtLink></li>
-          <li><NuxtLink to="/" class="cta bg-teal-500 hover:bg-teal-700 hover:border-2 hover:border-yellow-500 px-3 py-2 rounded-full text-white font-semibold">Войти</NuxtLink></li>
+          <li><NuxtLink to="/auth" class="cta bg-teal-500 hover:bg-teal-700 hover:border-2 hover:border-yellow-500 px-3 py-2 rounded-full text-white font-semibold">Войти</NuxtLink></li>
         </ul>
       </div>
 
@@ -70,7 +70,7 @@
           <li><NuxtLink to="/uslugi" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Кружки</NuxtLink></li>
           <li><NuxtLink to="/news" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Новости</NuxtLink></li>
           <li><NuxtLink to="/kontakty" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Контакты</NuxtLink></li>
-          <li><NuxtLink to="/" @click="isOpen = false" class="my-8 w-full text-center font-semibold cta inline-block bg-teal-500 hover:bg-teal-700 hover:border-2  hover:border-yellow-500 px-3 py-2 rounded-full text-white">Войти</NuxtLink></li>
+          <li><NuxtLink to="/auth" @click="isOpen = false" class="my-8 w-full text-center font-semibold cta inline-block bg-teal-500 hover:bg-teal-700 hover:border-2  hover:border-yellow-500 px-3 py-2 rounded-full text-white">Войти</NuxtLink></li>
         </ul>
 
         <div class="follow">
