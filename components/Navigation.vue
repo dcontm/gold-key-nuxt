@@ -28,7 +28,20 @@
           <li><NuxtLink to="/uslugi" class="hover:border-b-2 hover:border-yellow-500 hover:pb-1">Кружки</NuxtLink></li>
           <li><NuxtLink to="/news" class="hover:border-b-2 hover:border-yellow-500 hover:pb-1">Новости</NuxtLink></li>
           <li><NuxtLink to="/kontakty" class="hover:border-b-2 hover:border-yellow-500 hover:pb-1">Контакты</NuxtLink></li>
-          <li><NuxtLink to="/auth" class="cta bg-teal-500 hover:bg-teal-700 hover:border-2 hover:border-yellow-500 px-3 py-2 rounded-full text-white font-semibold">Войти</NuxtLink></li>
+          <li v-if="!this.$auth.loggedIn"><NuxtLink to="/login" class="cta bg-teal-500 hover:bg-teal-700 hover:border-2 hover:border-yellow-500 px-3 py-2 rounded-full text-white font-semibold">Войти</NuxtLink></li>
+          <li v-if="this.$auth.loggedIn" @click="openSubMenu" class="relative flex border-2 px-2 border-yellow-500  rounded-full hover:border-blue-400">
+            <svg v-if="!active" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+            <svg v-if="active" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+            </svg>
+            <ul v-if="active" class="absolute -ml-20 mt-8 md:text-base lg:text-lg font-sans font-medium text-teal-500 hover:text-teal-700">
+              <li><NuxtLink to="/dashboard" class="hover:border-b-2 hover:border-yellow-500">Кабинет</NuxtLink></li>
+              <li v-if="this.$auth.user.is_superuser"><NuxtLink to="/dashboard" class="hover:border-b-2 hover:border-yellow-500">Админ</NuxtLink></li>
+              <li @click="logout" class="hover:border-b-2 hover:border-yellow-500">Выйти</li>
+            </ul>
+          </li>
         </ul>
       </div>
 
@@ -64,13 +77,16 @@
         <span @click="isOpen = false" class="flex w-full items-center p-4 border-b">
         </span>
 
-        <ul class="divide-y font-sans  text-teal-500 hover:text-teal-700">
+        <ul class="divide-y font-sans  text-teal-500 hover:text-teal-700 mb-10">
           <li><NuxtLink to="/" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Главная</NuxtLink></li>
           <li><NuxtLink to="/detskij-sadik" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Сад</NuxtLink></li>
           <li><NuxtLink to="/uslugi" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Кружки</NuxtLink></li>
           <li><NuxtLink to="/news" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Новости</NuxtLink></li>
           <li><NuxtLink to="/kontakty" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Контакты</NuxtLink></li>
-          <li><NuxtLink to="/auth" @click="isOpen = false" class="my-8 w-full text-center font-semibold cta inline-block bg-teal-500 hover:bg-teal-700 hover:border-2  hover:border-yellow-500 px-3 py-2 rounded-full text-white">Войти</NuxtLink></li>
+          <li v-if="!this.$auth.loggedIn"><NuxtLink to="/login" @click="isOpen = false" class="my-8 w-full text-center font-semibold cta inline-block bg-teal-500 hover:bg-teal-700 hover:border-2  hover:border-yellow-500 px-3 py-2 rounded-full text-white">Войти</NuxtLink></li>
+          <li v-if="this.$auth.loggedIn"><NuxtLink to="/dashboard" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Кабинет</NuxtLink></li>
+          <li v-if="this.$auth.user.is_superuser"><NuxtLink to="/dashboard" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Админ</NuxtLink></li>
+          <li v-if="this.$auth.loggedIn"><NuxtLink to="/" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Выйти</NuxtLink></li>
         </ul>
 
         <div class="follow">
@@ -95,12 +111,19 @@
 export default {
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      active: false
     };
   },
   methods: {
     drawer() {
       this.isOpen = !this.isOpen;
+    },
+    openSubMenu() {
+      this.active = !this.active;   
+    },
+    async logout () {
+      await this.$auth.logout()
     }
   },
   watch: {
