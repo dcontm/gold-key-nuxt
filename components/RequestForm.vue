@@ -11,7 +11,7 @@
       <p v-for="error in nameErrors" class="text-red-600  text-xs border-red-600  mt-1 rounded-md px-2">{{error}}</p>
     </div>
     <div class="mb-3">
-      <input v-model.trim="$v.phoneNumber.$model" @blur="$v.phoneNumber.$touch()" @input="$v.phoneNumber.$touch()" type="text" id="phone" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500 dark:shadow-sm-light" placeholder="Ваш телефон">
+      <input v-model.trim="$v.phoneNumber.$model" @blur="$v.phoneNumber.$touch()" @input="$v.phoneNumber.$touch()" type="text" id="phone" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500 dark:shadow-sm-light" placeholder="+7 900 000 00 00">
       <p v-for="error in phoneNumberErrors" class="text-red-600  text-xs border-red-600  mt-1 rounded-md px-2">{{error}}</p>
     </div>
     
@@ -28,7 +28,8 @@
 
 <script>
 
-import { required, minLength, maxLength, sameAs} from 'vuelidate/lib/validators'
+import { required, minLength, maxLength, sameAs, helpers} from 'vuelidate/lib/validators'
+const phoneRegex = helpers.regex('phoneRegex', /(\+7|8)[- _]*\(?[- _]*(\d{3}[- _]*\)?([- _]*\d){7}|\d\d[- _]*\d\d[- _]*\)?([- _]*\d){6})/g)
 
 export default {
   props: ["target"],
@@ -44,7 +45,7 @@ export default {
 
   validations: {
     name: {required, minLength: minLength(4), maxLength: maxLength(30)},
-    phoneNumber: {required, minLength: minLength(6), maxLength: maxLength(11)},
+    phoneNumber: {required, phoneRegex},
     checkbox: {checked (val) {return val}}
   },
 
@@ -61,8 +62,7 @@ export default {
      phoneNumberErrors () {
       const errors = []
       if (!this.$v.phoneNumber.$dirty) return errors
-      !this.$v.phoneNumber.minLength && errors.push('Номер должен содержать не менее 6 символов')
-      !this.$v.phoneNumber.maxLength && errors.push('Номер должен сожержать не более из 11 символов')
+      !this.$v.phoneNumber.phoneRegex && errors.push('Номер в формате +7 900 000 00 00')
       !this.$v.phoneNumber.required && errors.push('Введите номер телефона.')
       return errors
     },
