@@ -19,13 +19,15 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/css/main.css',
+    'vue-select/dist/vue-select.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~plugins/vue-carousel', ssr: false },
     { src: '~plugins/tooltip', ssr: false },
-    { src: '~plugins/vuelidate'}
+    { src: '~plugins/vuelidate'},
+    { src: '~plugins/vue-select.js', ssr:false}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -66,12 +68,9 @@ export default {
         token: {
           property: 'access_token',
           global: true,
-          //required: true,
-          //type: 'Bearer'
         },
         user: {
           property: '',
-          // autoFetch: true
         },
         endpoints: {
           login: { url: '/token/', method: 'post' },

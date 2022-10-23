@@ -44,7 +44,7 @@ export default {
   },
 
   validations: {
-    name: {required, minLength: minLength(4), maxLength: maxLength(30)},
+    name: {required, minLength: minLength(3), maxLength: maxLength(30)},
     phoneNumber: {required, phoneRegex},
     checkbox: {checked (val) {return val}}
   },
@@ -54,7 +54,7 @@ export default {
     nameErrors () {
       const errors = []
       if (!this.$v.name.$dirty) return errors
-      !this.$v.name.minLength && errors.push('Имя должно содержать не менее 3 символов')
+      !this.$v.name.minLength && errors.push('Имя должно содержать не менее 2 символов')
       !this.$v.name.maxLength && errors.push('Имя должно содержать не более 30 символов')
       !this.$v.name.required && errors.push('Введите имя.')
       return errors

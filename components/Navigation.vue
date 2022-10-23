@@ -38,7 +38,7 @@
             </svg>
             <ul v-if="active" class="absolute -ml-20 mt-8 md:text-base lg:text-lg font-sans font-medium text-teal-500 hover:text-teal-700">
               <li><NuxtLink to="/dashboard" class="hover:border-b-2 hover:border-yellow-500">Кабинет</NuxtLink></li>
-              <li v-if="this.$auth.user.is_superuser"><NuxtLink to="/dashboard" class="hover:border-b-2 hover:border-yellow-500">Админ</NuxtLink></li>
+              <li v-if="this.$auth.user.is_superuser"><NuxtLink to="/admin/users" class="hover:border-b-2 hover:border-yellow-500">Админ</NuxtLink></li>
               <li @click="logout" class="hover:border-b-2 hover:border-yellow-500">Выйти</li>
             </ul>
           </li>
@@ -86,7 +86,7 @@
           <li v-if="!this.$auth.loggedIn"><NuxtLink to="/login" @click="isOpen = false" class="my-8 w-full text-center font-semibold cta inline-block bg-teal-500 hover:bg-teal-700 hover:border-2  hover:border-yellow-500 px-3 py-2 rounded-full text-white">Войти</NuxtLink></li>
           <div v-if="this.$auth.loggedIn" class="divide-y">
             <li><NuxtLink to="/dashboard" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Кабинет</NuxtLink></li>
-            <li v-if="this.$auth.user.is_superuser"><NuxtLink to="/dashboard" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Админ</NuxtLink></li>
+            <li v-if="this.$auth.user.is_superuser"><NuxtLink to="/admin/users" @click="isOpen = false" class="my-4 inline-block hover:border-b-2 hover:border-yellow-500 hover:pb-1">Админ</NuxtLink></li>
             <li @click="logout"><NuxtLink to="#" @click="isOpen = false" class="my-4 inline-block border-2 border-blue-400 px-3 rounded-full hover:border-yellow-500 text-teal-900">Выйти</NuxtLink></li>
           </div>
         </ul>
