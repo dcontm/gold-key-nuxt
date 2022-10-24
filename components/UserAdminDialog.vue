@@ -1,7 +1,7 @@
 <template>
   <div class="z-50 md:w-[600px] h-screen fixed py-8 bg-white">
     <div class="text-center text-teal-900 font-serif my-10 md:mt-8 md:mb-4 text-xl">
-      <p v-if="target">Редактировать {{user}}</p>
+      <p v-if="target">Редактировать <span class="text-red-500">{{user.username}}</span></p>
       <p v-else="!target">Новый пользователь</p>
     </div>
     <div class="flex justify-center">
@@ -38,7 +38,8 @@
             <input v-model="user.is_superuser" type="checkbox" id="user.is_active" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500 dark:shadow-sm-light">
           </div>
         </div>
-        <button type="submit" class="w-64 my-8 text-white bg-teal-600 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-800 dark:focus:ring-teal-800">Сохранить</button>
+        <button type="submit" class="w-64 mt-8 text-white bg-teal-600 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-800 dark:focus:ring-teal-800">Сохранить</button>
+        <button @click="close" class="w-64 my-8 text-teal-800 border-2 border-teal-600 hover:border-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-teal-600 dark:hover:border-teal-800 dark:focus:ring-teal-800">Отмена</button>
       </form>
     </div>
   </div>
@@ -51,7 +52,7 @@ import { required, minLength, maxLength, numeric, helpers} from 'vuelidate/lib/v
 const phoneRegex = helpers.regex('phoneRegex', /(\+7|8)[- _]*\(?[- _]*(\d{3}[- _]*\)?([- _]*\d){7}|\d\d[- _]*\d\d[- _]*\)?([- _]*\d){6})/g)
 
 export default {
-  props: ['target', 'camera', 'action'],
+  props: ['target', 'action'],
   data () {
     return {
       user: {
@@ -101,27 +102,29 @@ export default {
   },  
 
   methods: {
+    close() {
+      this.$emit('getDialog')
+    },
 
     async submit() {
       this.formSentError = false
       
       if (this.$v.$invalid) {
         this.$v.$touch()
-        console.log("ERROR")
         return
       }
       else {
         try {
           if (this.action === "create") {
             const resp = await this.$axios.$post("/users/", this.user)
-            this.$nextTick(() => { this.$v.$reset(); }); //очистка формы при удачной отправке
+            this.$nextTick(() => { this.$v.$reset(); });
             this.$emit('updateTable')
             this.$emit('getDialog')
             
           }
           if (this.action === "update") {
             const resp = await this.$axios.$put(`/users/${this.target.id}`, this.user)
-            this.$nextTick(() => { this.$v.$reset(); }); //очистка формы при удачной отправке
+            this.$nextTick(() => { this.$v.$reset(); }); 
             this.$emit('updateTable')
             this.$emit('getDialog')
           }
